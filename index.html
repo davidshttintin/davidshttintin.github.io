@@ -12,8 +12,6 @@
 
 <meta name="description" content="" />
 
-  <meta name="keywords" content="dalys, blog, 博客, 独立博客, Hexo" />
-
 
 
 
@@ -28,7 +26,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="MakiMakiMa~">
-<meta property="og:url" content="/index.html">
+<meta property="og:url" content="http://maki.cloud/index.html">
 <meta property="og:site_name" content="MakiMakiMa~">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
@@ -40,18 +38,18 @@
 
 
 
-  <link rel="canonical" href="/"/>
+  <link rel="canonical" href="http://maki.cloud/"/>
 
 
 
-<link rel="shortcut icon" href="/images/favicontest.ico?v=mbey">
-<link rel="icon" sizes="192x192" href="/images/icon.png?v=mbey" />
-<link rel="apple-touch-icon" sizes="144x144" href="/images/touch-icon.png?v=mbey" />
+<link rel="shortcut icon" href="/images/favicontest.ico?v=4n9n">
+<link rel="icon" sizes="192x192" href="/images/icon.png?v=4n9n" />
+<link rel="apple-touch-icon" sizes="144x144" href="/images/touch-icon.png?v=4n9n" />
 
 
-<link rel="stylesheet" href="/css/main.css?v=mbey">
-<link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css?v=mbey">
-<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css?v=mbey">
+<link rel="stylesheet" href="/css/main.css?v=4n9n">
+<link rel="stylesheet" href="/libs/fancybox/source/jquery.fancybox.css?v=4n9n">
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css?v=4n9n">
 
 
 <link rel="stylesheet" type="text/css" href="https://fonts.css.network/css?family=Alegreya" />
@@ -60,13 +58,13 @@
 <link rel="stylesheet" type="text/css" href="https://fonts.css.network/css?family=PT+Serif">
 
 
-    <title>MakiMakiMa~</title>
+    <title>MakiMakiMa~ - (ゝω·)~ kira</title>
   </head>
 
   <body lang="en">
 
     <div id="pageframe" class="fw">
-      <script type="text/javascript" src="/js/nanobar.js?v=mbey"></script>
+      <script type="text/javascript" src="/js/nanobar.js?v=4n9n"></script>
 <script type="text/javascript">
     /* Initial NanoBar */
     var nanobar = new Nanobar({
@@ -82,7 +80,7 @@
   <div class="logo-container left">
     
     <div class="logo left">
-      <a href=""><img src="/images/testnew.png?v=mbey"></a>
+      <a href="http://maki.cloud"><img src="/images/testnew.png?v=4n9n"></a>
     </div>
   </div>
 
@@ -90,7 +88,7 @@
     
     <div class="ico right" id="tg-s"><a href="javascript:void()" class="fa fa-search"></a></div>
     <form role="search" method="get" id="searchform-top" action="https://www.google.com/search">
-      <input type="hidden" name="sitesearch" value="">
+      <input type="hidden" name="sitesearch" value="http://maki.cloud">
       <input type="text" name="q" id="s-top" placeholder="搜一搜 (ゝω·)☆ " />
     </form>
 
@@ -168,16 +166,53 @@
 
     <article class="post post-type-normal hentry">
       <h2 class="post-title">
+        <a href="/2017/10/11/drawbacks-and-fix-of-dash-system-on-bilibili/">Drawbacks and Fix of MPEG-DASH on Bilibili</a>
+      </h2>
+
+      <div class="post-content">
+        
+          <p>TL;DR 如果Chrome看bilibili有明显卡顿，请使用非Chrome(或Chromium内核的浏览器)观看B站 eg. Firefox</p>
+<div class="alert alert-warning" role="alert"><strong>Attention:</strong> 本文是建立在读者使用HTML5播放器的前提下。目前B站默认播放器应该已经转换到HTML5了。如果你是用的是flash，<del>pls just go fxck yourself</del>。<br></div>
+
+<h1 id="Identifying-the-problem"><a href="#Identifying-the-problem" class="headerlink" title="Identifying the problem"></a>Identifying the problem</h1><p>如果你使用Chrome看bilibili时出现以下状况，请继续阅读本文:</p>
+<p>每缓存一小段视频之后，在这段视频没有播放完前，剩下的部分都不会继续缓存。直到这段视频播放完了，出现卡顿，才会开始加载下一段，由此导致一个5分钟的视频被切割成了20个15秒的视频，每15秒中间卡5秒，不能自理。</p>
+<p>由于特征和一般网速慢导致的卡顿并没有明显区别，所以这个问题很容易被归咎于ISP，就不了了之了。然后某天半夜我闲着没事翻了一下bilibili的视频统计信息，发现连接速度曲线表现很奇怪，才发现这事其实是DASH的锅。</p>
+          <a class="more-link" href="/2017/10/11/drawbacks-and-fix-of-dash-system-on-bilibili/#more">阅读全文&rarr;</a>
+        
+      </div>
+
+      <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="post-meta clf">
+  <span class="pmt pms fa-book">
+    
+      <a class="category-link" href="/categories/articles/">articles</a>
+    
+  </span>
+  <span class="pmt pms fa-clock-o">2017-10-11</span>
+<!--  <span class="pmt pms fa-eye">
+    <span id="post.busuanzi_value_page_pv"> </span> Hits
+  </span>
+-->
+  <span class="pmt pms extra fa-tag">
+    
+      <a class="tag-link" href="/tags/Chrome-Firefox-bilibili-MPEG-DASH-Unblock-youku-PAC/">Chrome; Firefox; bilibili; MPEG-DASH; Unblock youku; PAC</a>
+    
+  </span>
+</div>
+
+    </article>
+  
+    
+
+    <article class="post post-type-normal hentry">
+      <h2 class="post-title">
         <a href="/2017/09/17/hello-world/">Hello World</a>
       </h2>
 
       <div class="post-content">
         
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask 
+          <p>This <a href="http://maki.cloud">blog</a> was built using <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> on Sep 17, 2017.</p>
 
-          ...
-          <p> </p>
-          <a class="more-link" href="/2017/09/17/hello-world/#more">阅读全文&rarr;</a>
         
       </div>
 
@@ -195,7 +230,7 @@
 -->
   <span class="pmt pms extra fa-tag">
     
-      无标签
+      <a class="tag-link" href="/tags/Hello-world/">Hello world</a>
     
   </span>
 </div>
@@ -291,7 +326,7 @@
         <div id="bottom" class="fw">
   <div id="footer" class="wc center clf">
     <div class="info">
-      <p>Copyleft 2017 <a href="">MakiMakiMa~</a>. Proudly published with <a href="https://hexo.io/" target="_blank">Hexo</a>. Made by printempw. Modified by Daly.</p>
+      <p>Copyleft 2017 <a href="http://maki.cloud">MakiMakiMa~</a>. Proudly published with <a href="https://hexo.io/" target="_blank">Hexo</a>. Made by printempw. Modified by Daly.</p>
     </div>
   </div>
 </div>
@@ -304,11 +339,11 @@
       <span class="fa fa-angle-up"></span>
     </div>
 
-    <script src="/js/jquery-2.2.0.min.js?v=mbey"></script>
-<script src="/js/jquery.libs.js?v=mbey"></script>
-<script src="/js/highlight.min.js?v=mbey"></script>
-<script src="/libs/fancybox/source/jquery.fancybox.pack.js?v=mbey"></script>
-<script src="/js/script.js?v=mbey"></script>
+    <script src="/js/jquery-2.2.0.min.js?v=4n9n"></script>
+<script src="/js/jquery.libs.js?v=4n9n"></script>
+<script src="/js/highlight.min.js?v=4n9n"></script>
+<script src="/libs/fancybox/source/jquery.fancybox.pack.js?v=4n9n"></script>
+<script src="/js/script.js?v=4n9n"></script>
 
     
 
@@ -353,7 +388,7 @@
         x = $(this).offset().left + $(this).width();
         y = $(this).offset().top + $(this).height();
 
-        if (hits % 50 === 0) {
+        if (hits % 20 === 0) {
             var duration = 2000;
             // actions per minite
             var apm = parseInt(hits / ((Date.now() - start_time) / 1000) * 60);
@@ -552,7 +587,7 @@
 
 
 
-    <script src="/js/APlayer.min.js?v=mbey"></script>
+    <script src="/js/APlayer.min.js?v=4n9n"></script>
 <script type="text/javascript">
     var player = undefined;
 
