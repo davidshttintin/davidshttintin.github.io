@@ -1,0 +1,20 @@
+.holder{
+	position: relative;
+}
+.header{
+	position: absolute;
+	top: 0;
+	z-index: 1;
+}
+
+#vrview{
+	z-index: -1;
+}
+
+#inner-content{
+	pointer-events:auto;
+}
+
+.auto-pointer{
+	pointer-events:auto;
+}

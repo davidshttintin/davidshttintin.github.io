@@ -1,0 +1,252 @@
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>360&deg; Cranbrook Educational Community</title>
+	<meta name="description" content="360&deg; CEC-Google-VR">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/cus.style.css">
+
+	<script src='https://storage.googleapis.com/vrview/2.0/build/vrview.min.js'></script>
+
+	<link rel="stylesheet" href="./css/style3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- <script src="./js/index_google_vr-3-2.js"></script> -->
+	
+	<div class="wrapper">
+        <div id='vrview'></div>
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div id="dismiss">
+                <!-- <i class="fas fa-arrow-left"></i> -->
+            </div>
+
+            <div class="sidebar-header">
+                <h3>CEC</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <!-- <p>Dummy Heading</p> -->
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Locations</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a onclick="setLocation(scenes.quad)">Quad</a>
+                        </li>
+                        <li>
+                            <a onclick="setLocation(scenes.cafe)">Kingswood Cafe</a>
+                        </li>
+                        <li>
+                            <a onclick="setLocation(scenes.cb_reading_room)">Cranbrook Reading Room</a>
+                        </li>
+                        <li>
+                            <a onclick="setLocation(scenes.kw_lib)">Kingswood Library</a>
+                        </li>
+                        <li>
+                            <a onclick="setLocation(scenes.cb_gym)">Cranbrook Gym</a>
+                        </li>
+                        <li>
+                            <a onclick="setLocation(scenes.bridge)">Kingswood Bridge</a>
+                        </li>
+                        <li>
+                            <a onclick="setLocation(scenes.bus)">Friendship Circle</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+                </li>
+                <li>
+                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                </li>
+            </ul>
+        </nav>
+
+        
+
+        <!-- Page Content  -->
+        <div id="content">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="container-fluid">
+
+                            <button type="button" id="sidebarCollapse" class="btn btn-info auto-pointer">
+                                <i class="fas fa-align-left"></i>
+                                <span></span>
+                            </button>
+
+                            <div class="col-4">
+                                <h4 align="center">CEC 360&deg; Experience</h4>
+                            </div>
+
+
+                            <button class="btn btn-dark d-inline-block d-lg-none ml-auto auto-pointer" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="fas fa-align-justify"></i>
+                            </button>
+
+                            <div class="collapse navbar-collapse auto-pointer" id="navbarSupportedContent">
+                                <ul class="nav navbar-nav ml-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#">Page</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Apply Now</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">CEC Official Site</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+
+                <div id="inner-content">
+                    <div class="collapse show" id="collapseExample">
+                        <div class="jumbotron" style="padding: 20">
+                            <h1 class="display-3">Welcome!</h1>
+                            <p class="lead">This is a virtual tour of the Cranbrook Educational Community</p>
+                            <hr class="m-y-md">
+                            <p>Go to Sidebar -> Locations to take a look at different spots on the campus!</p>
+                            <p class="lead">
+                                <a class="btn btn-primary btn-lg" role="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">Link Start!</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                
+        </div>
+        
+
+    </div>
+    <div class="overlay"></div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    var vrView;
+    
+
+    var scenes = {
+        quad: {
+            image: 'https://maki.cloud/2048/x01_Quad_2.jpg',
+        },
+        cafe: {
+            image: 'https://maki.cloud/2048/x02_cafe_1.jpg',
+        },
+        cb_reading_room: {
+            image: 'https://maki.cloud/2048/x03_CB_Reading_Room_3.jpg',
+        },
+        kw_lib: {
+            image: 'https://maki.cloud/2048/x07_Kw_Lib_3.jpg',
+        },
+        cb_gym: {
+            image: 'https://maki.cloud/2048/x10_CB_Gym_1.jpg',
+        },
+        bridge: {
+            image: 'https://maki.cloud/2048/x12_Bridge_1.jpg',
+        },
+        bus: {
+            image: 'https://maki.cloud/2048/x13_Bus_1.jpg',
+        },
+
+    };
+
+    var currentScene = scenes.quad;
+</script>
+
+
+<script>
+    window.addEventListener('load', onVrViewLoad);
+    function onVrViewLoad() {
+        vrView = new VRView.Player('#vrview', {
+         image: scenes.quad.image,
+         is_stereo: false,
+         is_debug: true,
+         is_vr_off: false,
+         width: '100%',
+         height:'100%'
+     });
+
+  }
+</script>
+
+<script type="text/javascript">
+
+    function setLocation(loc) {
+        console.log("set new");
+        if(currentScene != loc) {
+            vrView.setContent({
+                image: loc.image,
+                is_stereo: false,
+                is_debug: true,
+                is_vr_off: false,
+                width: '100%',
+                height:'100%'
+            });
+            currentScene = loc;
+        }
+    }
+</script>
+
+
+
+  <script type="text/javascript">
+   $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+         theme: "minimal"
+     });
+
+      $('#dismiss, .overlay').on('click', function () {
+         $('#sidebar').removeClass('active');
+         $('.overlay').removeClass('active');
+     });
+
+      $('#sidebarCollapse').on('click', function () {
+         $('#sidebar').addClass('active');
+         $('.overlay').addClass('active');
+         $('.collapse.in').toggleClass('in');
+         $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+     });
+  });
+</script>
