@@ -75,12 +75,13 @@ a:focus {
     text-align: center;
     background: #7386D5;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
     cursor: pointer;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
+    align-content: center;
 }
 
 #dismiss:hover {
