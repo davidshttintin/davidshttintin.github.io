@@ -94,7 +94,7 @@
                 </li>
 
                 <li>
-                    <a href="#">About</a>
+                    <a onclick="toggleGMap()">Toggle Map</a>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
@@ -212,6 +212,7 @@
 
 <script type="text/javascript">
     var currentScene = 'quad';
+    var mapDisplayed = true;
 </script>
 
 
@@ -231,6 +232,19 @@
     }
 </script>
 
+<script type="text/javascript">
+    function toggleGMap(){
+        console.log("hide map");
+        var map = document.querySelector('#gmap');
+        if(mapDisplayed) {
+            map.setAttribute('style', "display: none;")
+            mapDisplayed = false;
+        } else {
+            map.setAttribute('style', "display: initial;")
+            mapDisplayed = true;
+        }
+    }
+</script>
 
   <script type="text/javascript">
    $(document).ready(function () {
