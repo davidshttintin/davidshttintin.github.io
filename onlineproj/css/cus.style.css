@@ -30,6 +30,16 @@
 	height: 50vh;
 }
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  line-height: 30px; /* Vertically center the text there */
+  background-color: #000000;
+  opacity: 0.8;
+}
+
 @media only screen and (max-device-width: 659px) {
 	#logo{
 		display: none;
@@ -40,7 +50,7 @@
 	#gmap,
 	#gmap:hover{
 		width: 40vw;
-		height: 20vh;
+		height: 25vh;
 		display: none;
 	}
 	#sec-title{
