@@ -41,6 +41,7 @@
 	#gmap:hover{
 		width: 40vw;
 		height: 20vh;
+		display: none;
 	}
 	#sec-title{
 		display: none;
