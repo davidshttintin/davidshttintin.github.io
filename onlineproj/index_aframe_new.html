@@ -109,10 +109,10 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Portfolio</a>
+                    <a href="#">Contact</a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <a onclick="showCredit()">Credit</a>
                 </li>
             </ul>
 
@@ -156,15 +156,12 @@
                                 <i class="fas fa-align-justify"></i>
                             </button>
 
-                            <div class="collapse navbar-collapse auto-pointer" id="navbarSupportedContent">
-                                <ul class="nav navbar-nav ml-auto">
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="#">Page</a>
-                                    </li>
-                                    <li class="nav-item">
+                            <div class="collapse navbar-collapse auto-pointer" id="navbarSupportedContent" style="text-align: right;">
+                                <ul class="nav navbar-nav ml-auto rounded">
+                                    <li class="nav-item active font-weight-bold">
                                         <a class="nav-link" href="https://schools.cranbrook.edu/page/admissions">Apply Now</a>
                                     </li>
-                                    <li class="nav-item">
+                                    <li class="nav-item active font-weight-bold">
                                         <a class="nav-link" href="http://cranbrook.edu/">CEC Official Site</a>
                                     </li>
                                 </ul>
@@ -173,7 +170,7 @@
                     </nav>
 
                 <div id="inner-content">
-                    <div class="collapse show" id="collapseExample">
+                    <div class="collapse show" id="collapseWelcome">
                         <div class="jumbotron" style="padding: 20; opacity: 0.9; margin-top: 0px;">
                             <h1>Welcome!</h1>
                             <div id="sec-title">
@@ -182,11 +179,20 @@
                             </div>
                             <p>Go to 360&deg; Cranbrook Experience -> Locations to take a look at different spots on the campus!</p>
                             <p class="m-y-md">
-                                <a class="btn btn-primary btn-lg" role="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">Link Start!</a>
+                                <a class="btn btn-primary btn-lg" role="button" data-toggle="collapse" data-target="#collapseWelcome" aria-expanded="true" aria-controls="collapseWelcome">Link Start!</a>
                             </p>
                         </div>
                     </div>
-                    
+
+                    <div class="collapse" id="collapseCredit">
+                        <div class="jumbotron" style="padding: 20; opacity: 0.9; margin-top: 0px;">
+                            <p>一点微小的贡献</h3>
+                            <p>Photos by solid.tomato. Front-end by daly. WebVR powered by a-frame.</p>
+                            <p>
+                                <a class="btn btn-primary btn-sm" role="button" data-toggle="collapse" data-target="#collapseCredit" aria-expanded="true" aria-controls="collapseCredit">OK</a>
+                            </p>
+                        </div>
+                    </div>
                     
                     <div style="position: fixed; bottom: 20px;">
                         <iframe id="gmap" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCL0PQI3Cn3tQmIqf7ZsguapJhG6pxX2O8&q=Cranbrook+Upper+School+Quadrangle,Bloomfield+Hills&zoom=18&" allowfullscreen></iframe>
@@ -194,12 +200,9 @@
                         <div style="margin-top: 5px">
                             <button type="button" class="btn btn-info auto-pointer" onclick="toggleGMap()" style="background: #7386D5;">
                                 <i class="fas fa-map"></i>
-                                <span></span>
                             </button>
                         </div>
                     </div>
-                    
-                    
                 </div>
                 
         </div>
@@ -220,6 +223,7 @@
 
 <script type="text/javascript">
     var currentScene = 'quad';
+    var flag = screen.width<660;
 </script>
 
 
@@ -244,11 +248,20 @@
         console.log("toggle map");
         var map = document.querySelector('#gmap');
         var att = map.getAttribute('style');
-        if(att == "display: none;") {
-            map.setAttribute('style', "display: initial;")
+        if(att == "display: none;" || flag) {
+            console.log("show");
+            map.setAttribute('style', "display: inline;")
+            flag = false;
         } else {
             map.setAttribute('style', "display: none;")
         }
+    }
+</script>
+
+<script type="text/javascript">
+    function showCredit(){
+        var creditJum = document.querySelector('#collapseCredit');
+        creditJum.setAttribute('class', "show");
     }
 </script>
 
