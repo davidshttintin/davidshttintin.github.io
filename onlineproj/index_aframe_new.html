@@ -24,7 +24,7 @@
 	<div>
         <a-scene >
             <a-assets>
-                <img id="quad" src="https://maki.cloud/2048/x01_Quad_2.jpg">
+                <img id="quad" src="./asset/x_quad.jpg">
                 <img id="cafe" src="https://maki.cloud/2048/x02_cafe_1.jpg">
                 <img id="cb_reading_room" src="https://maki.cloud/2048/x03_CB_Reading_Room_3.jpg">
                 <img id="kw_lib" src="https://maki.cloud/2048/x07_Kw_Lib_3.jpg">
@@ -59,33 +59,40 @@
             </div>
 
             <ul class="list-unstyled components">
-                <!-- <p>Dummy Heading</p> -->
+                <p>Location Selection</p>
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Locations</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <a href="#cbSubmenu" data-toggle="collapse" aria-expanded="false">Cranbrook</a>
+                    <ul class="collapse list-unstyled" id="cbSubmenu">
                         <li>
-                            <a onclick="setLocation('quad')">Quad</a>
+                            <a onclick="setLocation('quad', 'Cranbrook+Upper+School+Quadrangle,Bloomfield+Hills')">Quad</a>
                         </li>
                         <li>
-                            <a onclick="setLocation('cafe')">Kingswood Cafe</a>
+                            <a onclick="setLocation('cb_reading_room', '42.568166,-83.253448')">Cranbrook Reading Room</a>
                         </li>
                         <li>
-                            <a onclick="setLocation('cb_reading_room')">Cranbrook Reading Room</a>
-                        </li>
-                        <li>
-                            <a onclick="setLocation('kw_lib')">Kingswood Library</a>
-                        </li>
-                        <li>
-                            <a onclick="setLocation('cb_gym')">Cranbrook Gym</a>
-                        </li>
-                        <li>
-                            <a onclick="setLocation('bridge')">Kingswood Bridge</a>
-                        </li>
-                        <li>
-                            <a onclick="setLocation('bus')">Kingswood Bus Stop</a>
+                            <a onclick="setLocation('cb_gym', 'Cranbrook+Keppel+Gymnasium,Bloomfield+Hills')">Cranbrook Gym</a>
                         </li>
                     </ul>
                 </li>
+
+                <li class="active">
+                    <a href="#kwSubmenu" data-toggle="collapse" aria-expanded="false">Kingswood</a>
+                    <ul class="collapse list-unstyled" id="kwSubmenu">
+                        <li>
+                            <a onclick="setLocation('cafe', '42.572581,-83.243424')">Kingswood Cafe</a>
+                        </li>
+                        <li>
+                            <a onclick="setLocation('kw_lib', '42.572648,-83.245120')">Kingswood Library</a>
+                        </li>
+                        <li>
+                            <a onclick="setLocation('bridge', '42.574520,-83.245477')">Kingswood Bridge</a>
+                        </li>
+                        <li>
+                            <a onclick="setLocation('bus', '42.573352,-83.245028')">Kingswood Bus Stop</a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li>
                     <a href="#">About</a>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
@@ -126,11 +133,10 @@
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="container-fluid">
                             
-                            <button type="button" id="sidebarCollapse" class="btn btn-info auto-pointer">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info auto-pointer" style="background: #7386D5;">
                                 <i class="fas fa-align-left"></i>
                                 <span>360&deg; Cranbrook Experience</span>
                             </button>
-                            
                             
                             <!--
                             <div class="col-lg-7" style="opacity: 0.5; margin-top: 5px;">
@@ -168,15 +174,21 @@
 
                 <div id="inner-content">
                     <div class="collapse show" id="collapseExample">
-                        <div class="jumbotron" style="padding: 20; opacity: 0.9;">
+                        <div class="jumbotron" style="padding: 20; opacity: 0.9; margin-top: 0px;">
                             <h1>Welcome!</h1>
-                            <p class="lead">This is a virtual tour of the Cranbrook Educational Community</p>
-                            <hr class="m-y-md">
+                            <div id="sec-title">
+                                <p class="lead">This is a virtual tour of the Cranbrook Educational Community</p>
+                                <hr class="m-y-md">
+                            </div>
                             <p>Go to 360&deg; Cranbrook Experience -> Locations to take a look at different spots on the campus!</p>
-                            <p class="lead">
+                            <p class="m-y-md">
                                 <a class="btn btn-primary btn-lg" role="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">Link Start!</a>
                             </p>
                         </div>
+                    </div>
+                    
+                    <div style="position: fixed; bottom: 20px;">
+                        <iframe id="gmap" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCL0PQI3Cn3tQmIqf7ZsguapJhG6pxX2O8&q=Cranbrook+Upper+School+Quadrangle,Bloomfield+Hills&zoom=18&" allowfullscreen></iframe>
                     </div>
                     
                     
@@ -205,13 +217,15 @@
 
 <script type="text/javascript">
     
-    function setLocation(loc) {
+    function setLocation(loc, coordinates) {
         console.log("set new");
         var sky = document.querySelector('a-sky');
         var asset = document.querySelector('a-assets');
         var target = asset.querySelector(loc);
+        var map = document.querySelector('#gmap');
         if(currentScene != loc) {
             sky.setAttribute('src', "#" + loc);
+            map.setAttribute('src', "https://www.google.com/maps/embed/v1/place?key=AIzaSyCL0PQI3Cn3tQmIqf7ZsguapJhG6pxX2O8&q="+coordinates+"&zoom=18")
             currentScene = loc;
         }
     }
