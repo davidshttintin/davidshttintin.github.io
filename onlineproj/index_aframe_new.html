@@ -187,8 +187,16 @@
                         </div>
                     </div>
                     
+                    
                     <div style="position: fixed; bottom: 20px;">
                         <iframe id="gmap" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCL0PQI3Cn3tQmIqf7ZsguapJhG6pxX2O8&q=Cranbrook+Upper+School+Quadrangle,Bloomfield+Hills&zoom=18&" allowfullscreen></iframe>
+                        <div class="row"></div>
+                        <div style="margin-top: 5px">
+                            <button type="button" class="btn btn-info auto-pointer" onclick="toggleGMap()" style="background: #7386D5;">
+                                <i class="fas fa-map"></i>
+                                <span></span>
+                            </button>
+                        </div>
                     </div>
                     
                     
@@ -212,7 +220,6 @@
 
 <script type="text/javascript">
     var currentScene = 'quad';
-    var mapDisplayed = true;
 </script>
 
 
@@ -234,14 +241,13 @@
 
 <script type="text/javascript">
     function toggleGMap(){
-        console.log("hide map");
+        console.log("toggle map");
         var map = document.querySelector('#gmap');
-        if(mapDisplayed) {
-            map.setAttribute('style', "display: none;")
-            mapDisplayed = false;
-        } else {
+        var att = map.getAttribute('style');
+        if(att == "display: none;") {
             map.setAttribute('style', "display: initial;")
-            mapDisplayed = true;
+        } else {
+            map.setAttribute('style', "display: none;")
         }
     }
 </script>
