@@ -19,6 +19,17 @@
 	pointer-events:auto;
 }
 
+#gmap{
+	border: 5px;
+	height: 30vh;
+	width: 25vw;
+}
+
+#gmap:hover{
+	width: 40vw;
+	height: 50vh;
+}
+
 @media only screen and (max-device-width: 659px) {
 	#logo{
 		display: none;
@@ -26,10 +37,22 @@
 	#logo2{
 		display: none;
 	}
+	#gmap,
+	#gmap:hover{
+		width: 40vw;
+		height: 20vh;
+	}
+	#sec-title{
+		display: none;
+	}
 }
 
-@media only screen and (max-device-width: 1119px) {
+@media only screen and (max-device-width: 1119px) and (min-device-width: 660px) {
 	#logo2{
 		display: none;
+	}
+	#gmap,
+	#gmap:hover{
+		width: 35vw;
 	}
 }
